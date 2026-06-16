@@ -17,6 +17,32 @@ body{
     --gold:#d4af37;
 }
 
+/* TOP IMAGE */
+.hero-image{
+    width:100%;
+    border-bottom:3px solid var(--gold);
+}
+
+.hero-image img{
+    width:100%;
+    max-height:350px;
+    object-fit:contain;
+    display:block;
+    background:#111;
+}
+
+/* ADDRESS BAR */
+.address-bar{
+    text-align:center;
+    color:#fff;
+    background:#000;
+    margin:0;
+    padding:10px;
+    font-weight:bold;
+    border-bottom:2px solid var(--gold);
+}
+
+/* HEADER */
 header{
     background:linear-gradient(90deg,#111,var(--gold),#111);
     text-align:center;
@@ -36,6 +62,46 @@ header p{
     font-weight:bold;
 }
 
+/* SLIDER */
+.slider{
+    width:100%;
+    overflow:hidden;
+}
+
+.slides{
+    display:flex;
+    width:200%;
+    animation:slideMove 6s infinite alternate ease-in-out;
+}
+
+.slides img{
+    width:50%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+}
+
+@keyframes slideMove{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+}
+
+/* GALLERY */
+.product-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0;
+    width:100%;
+}
+
+.product-gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    display:block;
+}
+
+/* CONTAINER */
 .container{
     width:95%;
     max-width:1000px;
@@ -51,6 +117,7 @@ h2{
     color:var(--gold);
 }
 
+/* FORM */
 .products-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -86,6 +153,7 @@ textarea{
     resize:none;
 }
 
+/* BUTTONS */
 .buttons{
     margin-top:20px;
     text-align:center;
@@ -96,11 +164,10 @@ textarea{
     background:#25d366;
     color:#fff;
     padding:12px 20px;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
     border:none;
     cursor:pointer;
+    border-radius:5px;
+    font-weight:bold;
 }
 
 .call-btn{
@@ -128,6 +195,7 @@ textarea{
     border:0;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
@@ -138,12 +206,43 @@ footer{
 
 <body>
 
+<!-- TOP IMAGE -->
+<div class="hero-image">
+<img src="https://raw.githubusercontent.com/allroundadvert/Ziks-Goshen-Households-and-kitchen-appliances-/232558d796e47e8bfb6e6d49fc7e9b98f6db57ba/1781606737797.png">
+</div>
+
+<!-- ADDRESS -->
+<div class="address-bar">
+📍 Address: 18 Ugbague Street, Off Mission Road, Benin City, Edo State, Nigeria
+</div>
+
+<!-- HEADER -->
 <header>
 <h1>ZIKS GOSHEN HOUSEHOLD AND KITCHEN APPLIANCES</h1>
 <p>Your One-Stop Shop for Quality Household and Kitchen Appliances.</p>
-<p><strong>Business Slogan:</strong> Quality Household and Kitchen Appliances for Every Nigerian Home.</p>
 </header>
 
+<!-- SLIDER -->
+<div class="slider">
+<div class="slides">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/download%20(15).webp">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/download%20(16).webp">
+</div>
+</div>
+
+<!-- GALLERY -->
+<div class="product-gallery">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(10).jpeg">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(11).jpeg">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(12).jpeg">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(13).jpeg">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(14).jpeg">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(15).jpeg">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(54).jpeg">
+<img src="https://raw.githubusercontent.com/allroundadvert/Amaobi-kitchen-households-and-electronics-/da9a9cdc289ebcdca4a0d118b07e73954d66c703/images%20(56).jpeg">
+</div>
+
+<!-- ORDER FORM -->
 <div class="container">
 
 <h2>Order Form</h2>
@@ -187,7 +286,7 @@ footer{
 </div>
 
 <div class="product-item">
-<label><input type="checkbox" class="item"> Pots & Cookware Sets</label>
+<label><input type="checkbox" class="item"> Pots & Cookware</label>
 <input type="number" class="qty" placeholder="Quantity">
 <textarea placeholder="Specifications"></textarea>
 </div>
@@ -202,17 +301,14 @@ footer{
 
 <div class="buttons">
 <button class="whatsapp-btn" onclick="sendOrder()">SEND ORDER ON WHATSAPP</button>
-<a href="tel:08073376974" class="call-btn">CALL NOW</a>
+<a class="call-btn" href="tel:08073376974">CALL NOW</a>
 </div>
 
 </div>
 
-<!-- ✅ FIXED GOOGLE MAP -->
+<!-- MAP -->
 <div class="map">
-<iframe 
-src="https://www.google.com/maps?q=18+Ugbague+Str,+Off+Mission+Road,+Benin+City,+Edo+State&z=16&output=embed"
-loading="lazy">
-</iframe>
+<iframe src="https://www.google.com/maps?q=18+Ugbague+Str,+Off+Mission+Road,+Benin+City+Edo+State&output=embed"></iframe>
 </div>
 
 <footer>
@@ -222,27 +318,24 @@ loading="lazy">
 
 <script>
 function sendOrder(){
+let rows=document.querySelectorAll(".product-item");
+let message="🛒 *NEW ORDER - ZIKS GOSHEN APPLIANCES*%0A%0A";
 
-let rows = document.querySelectorAll(".product-item");
-let message = "🛒 *NEW ORDER - ZIKS GOSHEN HOUSEHOLD AND KITCHEN APPLIANCES*%0A%0A";
-
-rows.forEach(row => {
-let item = row.querySelector(".item");
-let qty = row.querySelector(".qty");
-let spec = row.querySelector("textarea");
-let name = row.querySelector("label");
+rows.forEach(row=>{
+let item=row.querySelector(".item");
+let qty=row.querySelector(".qty");
+let spec=row.querySelector("textarea");
+let name=row.querySelector("label");
 
 if(item.checked){
-message += "✔ " + name.innerText +
-"%0AQty: " + (qty.value || 1) +
-"%0ASpec: " + (spec.value || "None") +
+message+="✔ "+name.innerText+
+"%0AQty: "+(qty.value||1)+
+"%0ASpec: "+(spec.value||"None")+
 "%0A%0A";
 }
 });
 
-let phone = "2348073376974";
-
-window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
+window.open("https://wa.me/2348073376974?text="+message,"_blank");
 }
 </script>
 
