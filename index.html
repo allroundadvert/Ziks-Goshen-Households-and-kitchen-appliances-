@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZIKS GOSHEN HOUSEHOLD AND KITCHEN APPLIANCES</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#111;
+    color:#fff;
+}
+
+:root{
+    --gold:#d4af37;
+}
+
+header{
+    background:linear-gradient(90deg,#111,var(--gold),#111);
+    text-align:center;
+    padding:25px 15px;
+}
+
+header h1{
+    margin:0;
+    color:#111;
+    font-size:28px;
+    font-weight:900;
+}
+
+header p{
+    margin:6px 0;
+    color:#111;
+    font-weight:bold;
+}
+
+.container{
+    width:95%;
+    max-width:1000px;
+    margin:25px auto;
+    background:#1a1a1a;
+    border:1px solid var(--gold);
+    border-radius:10px;
+    padding:20px;
+}
+
+h2{
+    text-align:center;
+    color:var(--gold);
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.product-item{
+    border:1px solid var(--gold);
+    padding:10px;
+    background:#111;
+    border-radius:8px;
+}
+
+.product-item label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:var(--gold);
+}
+
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    background:#000;
+    border:1px solid var(--gold);
+    color:#fff;
+    box-sizing:border-box;
+}
+
+textarea{
+    height:60px;
+    resize:none;
+}
+
+.buttons{
+    margin-top:20px;
+    text-align:center;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    background:#25d366;
+    color:#fff;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+.call-btn{
+    display:inline-block;
+    background:#007bff;
+    color:#fff;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    margin-left:10px;
+}
+
+/* MAP */
+.map{
+    width:95%;
+    max-width:1000px;
+    margin:20px auto;
+    border:2px solid var(--gold);
+}
+
+.map iframe{
+    width:100%;
+    height:350px;
+    border:0;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ZIKS GOSHEN HOUSEHOLD AND KITCHEN APPLIANCES</h1>
+<p>Your One-Stop Shop for Quality Household and Kitchen Appliances.</p>
+<p><strong>Business Slogan:</strong> Quality Household and Kitchen Appliances for Every Nigerian Home.</p>
+</header>
+
+<div class="container">
+
+<h2>Order Form</h2>
+
+<div class="products-grid">
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Gold Spoons</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Decorative Plates</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Dinner Sets</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Gas Cookers</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Microwave Ovens</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Blenders</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Pots & Cookware Sets</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+<div class="product-item">
+<label><input type="checkbox" class="item"> Kitchen Utensils</label>
+<input type="number" class="qty" placeholder="Quantity">
+<textarea placeholder="Specifications"></textarea>
+</div>
+
+</div>
+
+<div class="buttons">
+<button class="whatsapp-btn" onclick="sendOrder()">SEND ORDER ON WHATSAPP</button>
+<a href="tel:08073376974" class="call-btn">CALL NOW</a>
+</div>
+
+</div>
+
+<!-- ✅ FIXED GOOGLE MAP -->
+<div class="map">
+<iframe 
+src="https://www.google.com/maps?q=18+Ugbague+Str,+Off+Mission+Road,+Benin+City,+Edo+State&z=16&output=embed"
+loading="lazy">
+</iframe>
+</div>
+
+<footer>
+© 2026 ZIKS GOSHEN HOUSEHOLD AND KITCHEN APPLIANCES<br>
+📞 0807 337 6974
+</footer>
+
+<script>
+function sendOrder(){
+
+let rows = document.querySelectorAll(".product-item");
+let message = "🛒 *NEW ORDER - ZIKS GOSHEN HOUSEHOLD AND KITCHEN APPLIANCES*%0A%0A";
+
+rows.forEach(row => {
+let item = row.querySelector(".item");
+let qty = row.querySelector(".qty");
+let spec = row.querySelector("textarea");
+let name = row.querySelector("label");
+
+if(item.checked){
+message += "✔ " + name.innerText +
+"%0AQty: " + (qty.value || 1) +
+"%0ASpec: " + (spec.value || "None") +
+"%0A%0A";
+}
+});
+
+let phone = "2348073376974";
+
+window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
+}
+</script>
+
+</body>
+</html>
